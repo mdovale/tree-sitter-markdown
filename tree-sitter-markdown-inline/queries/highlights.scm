@@ -4,10 +4,10 @@
   (link_title)
 ] @text.literal
 
-[
-  (emphasis_delimiter)
-  (code_span_delimiter)
-] @punctuation.delimiter
+; `emphasis_delimiter` is omitted here: tagging it as @punctuation.delimiter produced separate
+; captures that sorted after parent (emphasis)/(strong_emphasis) and overwrote delimiter
+; styling in Neon (last token wins per range). Delimiters stay within parent highlight spans.
+(code_span_delimiter) @punctuation.delimiter
 
 (emphasis) @text.emphasis
 
